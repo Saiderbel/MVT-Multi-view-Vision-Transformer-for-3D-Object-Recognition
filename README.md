@@ -2,7 +2,7 @@
 
 ## Overview
 
-This an implementation of the work achieved by Chen et al. in 
+This an implementation of the work achieved by Chen et al. in https://arxiv.org/abs/2110.13083
 
 
 ## How to install dependencies
