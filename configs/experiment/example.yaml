@@ -1,0 +1,32 @@
+# @package _global_
+
+# to execute this experiment run:
+# python train.py experiment=example
+
+defaults:
+  - override /datamodule: modelnet.yaml
+  - override /model: mvt.yaml
+  - override /callbacks: null
+  - override /logger: null
+  - override /trainer: default.yaml
+
+# all parameters below will be merged with parameters from default configurations set above
+# this allows you to overwrite only specified parameters
+
+# name of the run determines folder name in logs
+name: "simple_dense_net"
+
+seed: 12345
+batch_size_: 9
+
+trainer:
+  min_epochs: 1
+  max_epochs: 3
+  gradient_clip_val: 0.5
+
+model:
+  lr: 0.002
+
+logger:
+  wandb:
+    tags: ["nvt", "${name}"]

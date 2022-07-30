@@ -1,0 +1,9 @@
+_target_: src.datamodules.modelnet_datamodule.MODELNETDataModule
+
+##TODO: change params here
+data_dir: ${data_dir}/ModelNet10 # data_dir is specified in config.yaml of the parent caller
+#batch_size: ${batch_size} #also specified in the global config.yaml of the patent caller
+batch_size: 32
+#batch_size: model.batchsize
+num_workers: 0
+pin_memory: False

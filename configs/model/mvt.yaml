@@ -1,0 +1,19 @@
+##TODO: define params
+_target_: src.models.mvt_module.MVT
+batch_size: ${datamodule.batch_size} #specified in the global config.yaml of the patent caller
+# lr: 0.00021403010424021394
+lr: 8.187824420871972e-05
+weight_decay: 6.999268665944247e-06
+expansion_ratio: 2
+hidden_dimension: 192
+attention_heads: 3
+local_blocks: 8
+global_blocks: 4
+num_views: 12
+nbr_classes: 10
+classifier_dropout: 0.2
+transformer_dropout: 0.3
+
+### 4 x 4
+patch_wh: 4096
+num_patches: 16
