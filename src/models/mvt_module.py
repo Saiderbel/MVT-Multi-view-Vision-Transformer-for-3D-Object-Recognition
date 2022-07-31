@@ -13,7 +13,7 @@ from pytorch_lightning import LightningModule
 Module defining the structure of Multi-view Vision Transformer introduced in [1].
 References:
 -----------
-1.  TODO: add citation for the MVT
+[1] https://arxiv.org/abs/2110.13083
 """
 class MVT(LightningModule):
 
