@@ -8,7 +8,7 @@ import pytorch_lightning as pl
 Module containing model for per-patch operations.
 References:
 -----------
-1.  TODO: add citation for the MVT
+1. https://arxiv.org/abs/2110.13083
 """
 
 class PerPatch(pl.LightningModule):
@@ -27,8 +27,6 @@ class PerPatch(pl.LightningModule):
         self.backbone = alexnet(weights=AlexNet_Weights.DEFAULT).features
         
         # Position embedding layer
-        # TODO: will embed_size be the same as length of the output
-        # therefore D?
         self.pos_embed = nn.Embedding(num_patches, hidden_dimension)
 
         #self.pos_indices = , device=self.device)

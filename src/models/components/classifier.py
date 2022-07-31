@@ -6,7 +6,7 @@ import pytorch_lightning as pl
 Module defining the structure of Multi-view Vision Transformer introduced in [1].
 References:
 -----------
-1.  TODO: add citation for the MVT
+1. https://arxiv.org/abs/2110.13083
 """
 
 class Classifier(pl.LightningModule):
@@ -52,7 +52,7 @@ class Classifier(pl.LightningModule):
         Returns:
             ndarray: Probabilities of the classes.
         """
-        # TODO: Check functionality!!
+
         # input should be of shape (C, num_views) = (num_views*(w*h+1), hidden_dimension)
         # sum pooling only over the attended special tokens
 
