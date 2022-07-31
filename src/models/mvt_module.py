@@ -58,11 +58,11 @@ class MVT(LightningModule):
         # it also ensures init params will be stored in ckpt
         self.save_hyperparameters(logger=False)
 
-        # Per patch operations block - TODO: for each view???
+
         self.per_patch = PerPatch(hidden_dimension, batch_size=batch_size, num_views=num_views,
                                   num_patches=num_patches, patch_wh=patch_wh)
 
-        # TODO: is the embedding correct?
+
         self.view_embed = nn.Embedding(num_views, hidden_dimension)
         self.register_buffer("view_indices",
                              torch.tensor([i for i in range(num_views)], dtype=torch.int64))
@@ -111,7 +111,7 @@ class MVT(LightningModule):
         # Run x through the Per Patch block
         x = self.per_patch(input)
 
-        # Unflatten x by one dimension (TODO: Hopefully correct order?)
+
         x = torch.reshape(x, (self.hparams.batch_size, self.hparams.num_views, self.hparams.num_patches, self.hparams.hidden_dimension))
 
         # Get view vectors and reshape them so they can be concatenated
